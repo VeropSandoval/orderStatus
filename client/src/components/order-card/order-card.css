@@ -1,0 +1,12 @@
+.OrderCard_container {
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 12px;
+  padding: 12px 12px 0;
+}
+
+.OrderCard_container___clickable {
+  cursor: pointer;
+}

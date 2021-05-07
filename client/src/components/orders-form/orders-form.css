@@ -1,0 +1,42 @@
+.OrdersForm_container {
+  margin: 32px auto;
+  border-radius: 8px;
+  box-shadow: 0px 0px 10px 0px #888;
+  width: 300px;
+  padding: 8px 16px;
+  text-align: justify;
+}
+
+.OrdersForm {
+  display: flex;
+  flex-direction: column;
+}
+
+.OrdersForm label {
+  font-size: 10px;
+  display: flex;
+  flex-direction: column;
+}
+.OrdersForm input[type="text"] {
+  background-color: #ddd;
+    color: #000;
+    border: none;
+    border-radius: 5px;
+    font-size: large;
+    padding: 4px;
+}
+
+.OrdersForm input[type="submit"] {
+  margin: 16px 0px;
+  text-transform: uppercase;
+  background-color: #120f59;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 8px;
+  font-weight: bold;
+}
+
+.OrdersForm_error {
+  color: #8f1824;
+}

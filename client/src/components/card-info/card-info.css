@@ -1,0 +1,8 @@
+.CardInfo_label {
+  font-weight: bold;
+}
+
+.CardInfo_text {
+  display: flex;
+  flex-direction: column;
+}

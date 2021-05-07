@@ -1,0 +1,8 @@
+.CardField {
+  flex-grow: 1;
+  margin-bottom: 12px;
+}
+
+.CardField__small {
+  width: 50%;
+}
