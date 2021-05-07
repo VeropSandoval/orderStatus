@@ -6,6 +6,7 @@ const checkpoints = csvToJson.getJsonFromCsv(path.join(__dirname, 'checkpoints.c
 
 const createOrder = (item) => {
   const checkpoints = createCheckpoints(item.tracking_number);
+  const article = createArticle(item)
   return {
     email: item.email,
     orderNo: item.orderNo,
@@ -13,7 +14,7 @@ const createOrder = (item) => {
     address: [item.street, item.zip_code + " " + item.city],
     courier: item.courier,
     destinationCountry: item.destination_country_iso3,
-    articles: [createArticle(item)],
+    articles: article ? [article] : [],
     checkpoints,
     currentStatus: checkpoints && checkpoints.length > 0 
       ? checkpoints[0] 
@@ -28,12 +29,15 @@ const createCheckpoints = (trackingNumber) => {
 }
 
 const createArticle = (item) => {
-  return {
-    articleImageUrl: item.articleImageUrl,
-    articleNo: item.articleNo,
-    productName: item.product_name,
-    quantity: item.quantity,
-  };
+  if (item.articleImageUrl || item.articleNo || item.product_name || item.quantity) {
+    return {
+      articleImageUrl: item.articleImageUrl,
+      articleNo: item.articleNo,
+      productName: item.product_name,
+      quantity: item.quantity,
+    };
+  }
+  return null;
 };
 
 const allOrders = trackings.reduce((total, current) => {

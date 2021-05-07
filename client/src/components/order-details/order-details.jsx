@@ -50,23 +50,26 @@ const OrdersDetails = () => {
           </div>
         
       </CardField>
-      <CardField>
-      <CardInfo label="Articles" data={[]} />
-        <div className="OrderDetails-articles">
-            <ul>
-            {details.articles.map((item, index) => {
-              return (<li>
-                <div className="OrderDetails-articleQuantity">x{item.quantity}</div>
-                <div className="OrderDetails-articleImage">
-                  <img src={item.articleImageUrl} />
-                </div>
-                <div className="OrderDetails-articleName">{item.productName}</div>
-              </li>)
-            })}
-            </ul>
-          </div>
-        
-      </CardField>
+      { details.articles && details.articles.length > 0 && 
+        (
+          <CardField>
+            <CardInfo label="Articles" data={[]} />
+            <div className="OrderDetails-articles">
+              <ul>
+              {details.articles.map((item, index) => {
+                return (<li>
+                  <div className="OrderDetails-articleQuantity">x{item.quantity}</div>
+                  <div className="OrderDetails-articleImage">
+                    <img src={item.articleImageUrl} />
+                  </div>
+                  <div className="OrderDetails-articleName">{item.productName}</div>
+                </li>)
+              })}
+              </ul>
+            </div>
+          </CardField>
+        )
+      }
     </div>
   )
 }

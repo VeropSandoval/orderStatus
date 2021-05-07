@@ -20,8 +20,13 @@ const Orders = () => {
   }, [email]);
 
   if (!orderList || orderList.length === 0) {
-    return <span>There is no orders for email {email} </span>
-  }
+    return (
+      <div className="Orders-error">
+        <p>There is no orders for email <span>{email}</span></p>
+      </div>
+    );
+  };
+  
   return (
     <div className="Orders-container">
       <ul>

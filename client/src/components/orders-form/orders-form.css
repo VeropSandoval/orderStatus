@@ -10,11 +10,11 @@
 }
 .OrdersForm input[type="text"] {
   background-color: #ddd;
-    color: #000;
-    border: none;
-    border-radius: 5px;
-    font-size: large;
-    padding: 4px;
+  color: #000;
+  border: none;
+  border-radius: 5px;
+  font-size: 14px;
+  padding: 4px;
 }
 
 .OrdersForm input[type="submit"] {

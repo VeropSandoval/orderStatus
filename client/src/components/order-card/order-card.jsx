@@ -11,7 +11,7 @@ const OrderCard = ({order, isClickable}) => {
     isClickable && history.push(`/order-details/${order.orderNo}`);
   }
   return (<div 
-      className={`OrderCard-container ${isClickable ? `OrderCard_container__clickable` : ''}`.trim()}
+      className={`OrderCard-container ${isClickable ? `OrderCard-container__clickable` : ''}`.trim()}
       onClick={handleClick}
       >
     <CardField size="small">

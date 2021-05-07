@@ -11,12 +11,13 @@ const OrdersForm = () => {
   const history = useHistory();
 
   const handleChange = (e) => {
-    setEmail(e.target.value);
+    const emailValue = e.target.value;
+    setEmail(emailValue);
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (!error) {
+    if (!email) {
       setError("Email cannot be empty");
     } else if (EMAIL_VALIDATOR.test(email)) {
       history.push(`/orders/${email}`);

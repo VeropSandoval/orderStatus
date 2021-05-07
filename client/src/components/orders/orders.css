@@ -7,3 +7,11 @@
 .Orders-container ul li {
   margin: 12px 0;
 }
+
+.Orders-error {
+  text-align: left;
+}
+
+.Orders-error span {
+  font-weight: bold;
+}
