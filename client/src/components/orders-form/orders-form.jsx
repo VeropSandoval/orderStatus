@@ -32,10 +32,10 @@ const OrdersForm = () => {
       <form className="OrdersForm" onSubmit={handleSubmit}>
         <label>
           Email:
-          <input type="text" name="email" onChange={handleChange} value={email} />
-          <span className="OrdersForm-error">{error}</span>
+          <input type="text" name="email" onChange={handleChange} value={email} data-testid="order-input" />
+          {error && <span className="OrdersForm-error" data-testid="error-container">{error}</span>}
         </label>
-        <input type="submit" value="Send" />
+        <input type="submit" value="Send" data-testid="send-button" />
       </form>
     </div>
   )
