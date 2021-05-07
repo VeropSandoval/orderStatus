@@ -1,8 +1,8 @@
-.CardInfo_label {
+.CardInfo-label {
   font-weight: bold;
 }
 
-.CardInfo_text {
+.CardInfo-text {
   display: flex;
   flex-direction: column;
 }

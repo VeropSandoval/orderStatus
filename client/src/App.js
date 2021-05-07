@@ -18,12 +18,14 @@ function App() {
         <img src={logo} alt="ParcelLab" />
       </header>
       <main>
+        <div className="App-container">
         <Switch>
           <Route exact path="/" component={OrdersForm} />
           <Route path="/orders/:email" component={Orders} />
           <Route path="/order-details/:orderNo" component={OrderDetails} />
           <Route component={NotFound} />
         </Switch>
+        </div>
       </main>
     </div>
   </Router>

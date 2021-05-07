@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useHistory, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import CardInfo from "../card-info";
 import CardField from "../card-field";
 import * as ordersApi from "../../api/ordersApi";
@@ -7,7 +7,6 @@ import "./order-details.css";
 
 const OrdersDetails = () => {
   const { orderNo } = useParams();
-  const { history } = useHistory();
   const [ details, setDetails ] = useState(null);
 
   useEffect(() => {
@@ -25,7 +24,7 @@ const OrdersDetails = () => {
     return <span>There is no orders for orderNo {orderNo} </span>
   }
   return (
-    <div className="OrdersDetails_container">
+    <div className="OrdersDetails-container">
       <CardField>
         <CardInfo label="Order Number" data={[details.orderNo]} />
       </CardField>
@@ -39,12 +38,12 @@ const OrdersDetails = () => {
         <CardInfo label="Current Status" data={[details.checkpoints[0].status_details]} />
       </CardField>
       <CardField>
-        <div className="OrderDetails_tracking">
+        <div className="OrderDetails-tracking">
             <ul>
             {details.checkpoints.map((item, index) => {
               return (<li>
-                <div className="OrderDetails_trackingDate">{new Date(item.timestamp).toLocaleString()}</div>
-                <div className="OrderDetails_trackingStatus">{item.status_text}</div>
+                <div className="OrderDetails-trackingDate">{new Date(item.timestamp).toLocaleString()}</div>
+                <div className="OrderDetails-trackingStatus">{item.status_text}</div>
               </li>)
             })}
             </ul>
@@ -53,15 +52,15 @@ const OrdersDetails = () => {
       </CardField>
       <CardField>
       <CardInfo label="Articles" data={[]} />
-        <div className="OrderDetails_articles">
+        <div className="OrderDetails-articles">
             <ul>
             {details.articles.map((item, index) => {
               return (<li>
-                <div className="OrderDetails_articleQuantity">x{item.quantity}</div>
-                <div className="OrderDetails_articleImage">
+                <div className="OrderDetails-articleQuantity">x{item.quantity}</div>
+                <div className="OrderDetails-articleImage">
                   <img src={item.articleImageUrl} />
                 </div>
-                <div className="OrderDetails_articleName">{item.productName}</div>
+                <div className="OrderDetails-articleName">{item.productName}</div>
               </li>)
             })}
             </ul>

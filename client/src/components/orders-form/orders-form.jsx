@@ -26,13 +26,13 @@ const OrdersForm = () => {
   };
 
   return (
-    <div className="OrdersForm_container">
+    <div>
       <p>Please enter your email address to see your recent orders</p>
       <form className="OrdersForm" onSubmit={handleSubmit}>
         <label>
           Email:
           <input type="text" name="email" onChange={handleChange} value={email} />
-          <span className="OrdersForm_error">{error}</span>
+          <span className="OrdersForm-error">{error}</span>
         </label>
         <input type="submit" value="Send" />
       </form>

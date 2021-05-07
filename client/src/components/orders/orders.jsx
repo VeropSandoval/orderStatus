@@ -23,7 +23,7 @@ const Orders = () => {
     return <span>There is no orders for email {email} </span>
   }
   return (
-    <div className="Orders_container">
+    <div className="Orders-container">
       <ul>
         {orderList.map((order, index) => {
           return (
